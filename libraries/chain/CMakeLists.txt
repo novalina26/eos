@@ -124,6 +124,7 @@ add_library( eosio_chain
              platform_timer_accuracy.cpp
              kv_context.cpp
              kv_context_chainbase.cpp
+             kv_context_rocksdb.cpp
              db_context_chainbase.cpp
              ${PLATFORM_TIMER_IMPL}
              ${HEADERS}
@@ -136,6 +137,8 @@ target_include_directories( eosio_chain
                             PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" "${CMAKE_CURRENT_BINARY_DIR}/include"
                                    "${CMAKE_CURRENT_SOURCE_DIR}/../wasm-jit/Include"
                                    "${CMAKE_CURRENT_SOURCE_DIR}/libraries/eos-vm/include"
+                                   "${CMAKE_CURRENT_SOURCE_DIR}/../rocksdb/include"
+                                   "${CMAKE_CURRENT_SOURCE_DIR}/../chain_kv/include/b1"
                             )
 
 add_library(eosio_chain_wrap INTERFACE )
